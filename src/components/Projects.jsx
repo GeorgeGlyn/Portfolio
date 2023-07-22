@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import project2Image from '../images/profile-pic.jpg';
+import printGlasses from '../images/print-glasses.png';
 import ProjectDetails from './ProjectDetails';
 
-const projects = [
+const projectsData = [
     {
         name: 'ImagAIne',
         image:
@@ -47,7 +47,7 @@ const projects = [
     {
         name: 'Print Glasses',
         image:
-            'https://raw.githubusercontent.com/androidsparkling/VuzixArabic/main/app/src/main/ic_launcher-playstore.png?token=GHSAT0AAAAAACC6JHU2BC6KTQJJVS4LFEOWZFWNH3A',
+            printGlasses,
         year: 2023,
         description: 'UpscaleAI is an innovative app designed to help you enhance the quality of your images quickly and easily. With its powerful AI-based algorithms, this app can upscale your images up to 16 times their original size with just a few clicks.',
         mycontribution: 'Designed an integrated application with sophisticated designs and API integration. Implemented backend image processing using Real-ESRGAN to upscale user images by 2x, 4x, 8x, and 16x. Resulting enhanced images are returned via API for improved visual quality.',
@@ -56,6 +56,22 @@ const projects = [
         name: 'AirBeamTV',
         image:
             'https://play-lh.googleusercontent.com/6Du52C6IxDwW_phBXe3JCaJycUg-BPgqn7BBUoRWDYS_qguMa7Yp1pwaLidmwZl16ls=s512-rw',
+        year: 2021,
+        description: 'UpscaleAI is an innovative app designed to help you enhance the quality of your images quickly and easily. With its powerful AI-based algorithms, this app can upscale your images up to 16 times their original size with just a few clicks.',
+        mycontribution: 'Designed an integrated application with sophisticated designs and API integration. Implemented backend image processing using Real-ESRGAN to upscale user images by 2x, 4x, 8x, and 16x. Resulting enhanced images are returned via API for improved visual quality.',
+    },
+    {
+        name: 'Panzer Battle',
+        image:
+            'https://play-lh.googleusercontent.com/u5CyHrGImmjXjYZgrYbqRjGPwBHFcr4yO3P0HQeFt4JAQtLRMiDnp1tqRy-2euSu8JX9=s512-rw',
+        year: 2021,
+        description: 'UpscaleAI is an innovative app designed to help you enhance the quality of your images quickly and easily. With its powerful AI-based algorithms, this app can upscale your images up to 16 times their original size with just a few clicks.',
+        mycontribution: 'Designed an integrated application with sophisticated designs and API integration. Implemented backend image processing using Real-ESRGAN to upscale user images by 2x, 4x, 8x, and 16x. Resulting enhanced images are returned via API for improved visual quality.',
+    },
+    {
+        name: 'Screen Project',
+        image:
+            'https://play-lh.googleusercontent.com/u5CyHrGImmjXjYZgrYbqRjGPwBHFcr4yO3P0HQeFt4JAQtLRMiDnp1tqRy-2euSu8JX9=s512-rw',
         year: 2021,
         description: 'UpscaleAI is an innovative app designed to help you enhance the quality of your images quickly and easily. With its powerful AI-based algorithms, this app can upscale your images up to 16 times their original size with just a few clicks.',
         mycontribution: 'Designed an integrated application with sophisticated designs and API integration. Implemented backend image processing using Real-ESRGAN to upscale user images by 2x, 4x, 8x, and 16x. Resulting enhanced images are returned via API for improved visual quality.',
@@ -159,12 +175,12 @@ const Projects = () => {
     return (
         <section id="projects" className="mt-16">
             <div className="container mx-auto">
-                <h2 className="text-4xl font-bold mb-8">Projects</h2>
+                <h2 className="text-4xl font-bold mb-8 text-center">Projects</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-                    {projects.map((project, index) => (
+                    {projectsData.map((project) => (
                         <div
-                            key={index}
-                            className="bg-white rounded-lg shadow-md overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
+                            key={project.id}
+                            className="relative rounded-lg shadow-md overflow-hidden cursor-pointer transform transition-transform hover:scale-105"
                             onClick={() => openProjectDetails(project)}
                         >
                             <img
@@ -172,10 +188,8 @@ const Projects = () => {
                                 alt={project.name}
                                 className="w-full h-48 object-cover"
                             />
-                            <div className="p-4">
-                                <h3 className="text-lg font-semibold text-center">
-                                    {project.name} ({project.year})
-                                </h3>
+                            <div className="absolute inset-0 flex items-center justify-center text-white bg-black bg-opacity-50 hover:bg-opacity-70 transition duration-300">
+                                <h3 className="text-lg font-semibold text-center">{project.name}</h3>
                             </div>
                         </div>
                     ))}

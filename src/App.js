@@ -1,13 +1,13 @@
+// App.js
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
-
-// Import images for the projects and profile picture
 import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Projects from './components/Projects';
 import Hero from './components/Hero';
+
 function App() {
   const [formData, setFormData] = useState({
     name: '',
@@ -30,13 +30,13 @@ function App() {
     });
   };
 
-
   return (
-    <div className="bg-gray-100 min-h-screen">
+    <div className="bg-gradient-to-b from-gray-800 to-gray-900 min-h-screen text-gray-100">
+     
       <Header />
 
       <motion.main
-        className="container mx-auto p-4"
+        className="container mx-auto p-4 mt-16" // Added mt-16 for padding
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
