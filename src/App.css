@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+/* App.css */
+
+/* Add styles to make the header sticky */
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #fff; /* Add your preferred header background color */
+  z-index: 100; /* Ensure the header is above other elements */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+/* Add a bottom margin for the main container */
+.main-container {
+  margin-bottom: 4rem; /* Adjust as needed for spacing */
+}
+
+/* Add styles for the sections to create a beautiful background */
+.section-container {
+  background-color: #f9fafb; /* Add a light background color for sections */
+  padding: 2rem; /* Add padding to create space around the content */
+  border-radius: 8px; /* Add rounded corners for a softer look */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+}
+
+/* Add styles for the footer to make it stick to the bottom of the page */
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff; /* Add your preferred footer background color */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for separation */
+  padding: 1rem; /* Add padding to create space around the content */
+}
